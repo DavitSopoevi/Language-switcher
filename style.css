@@ -1,0 +1,111 @@
+@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,700,700i);
+body {
+  background-color: var(--bg);
+  --bg: #257c49;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  font-family: "Source Sans Pro", Arial, sans-serif;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex: 1 1;
+  -webkit-flex: initial;
+  -webkit-align-items: center;
+  -moz-align-items: center;
+  -ms-align-items: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  -moz-justify-content: center;
+  -ms-justify-content: center;
+  justify-content: center;
+  -ms-flex-pack: center;
+}
+
+.language-switcher {
+  position: relative;
+  display: inline-block;
+  width: calc(64px * 2);
+  height: 64px;
+  -webkit-transform: translateY(40%);
+  -moz-transform: translateY(40%);
+  -ms-transform: translateY(40%);
+  -o-transform: translateY(40%);
+  transform: translateY(40%);
+  -webkit-transition: transform 0.17s cubic-bezier(0.26, 0.48, 0.08, 0.9);
+  -moz-transition: transform 0.17s cubic-bezier(0.26, 0.48, 0.08, 0.9);
+  -ms-transition: transform 0.17s cubic-bezier(0.26, 0.48, 0.08, 0.9);
+  -o-transition: transform 0.17s cubic-bezier(0.26, 0.48, 0.08, 0.9);
+  transition: transform 0.17s cubic-bezier(0.26, 0.48, 0.08, 0.9);
+}
+.language-switcher input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+.language-switcher .select-fr,
+.language-switcher .select-en {
+  position: absolute;
+  font-size: 25.6px;
+  top: 16px;
+  color: #fff;
+  mix-blend-mode: difference;
+}
+.language-switcher .select-fr {
+  left: 18.2857142857px;
+}
+.language-switcher .select-en {
+  right: 16px;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #383837;
+  box-shadow: 0 3px 64px rgba(30, 52, 112, 0.1);
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 64px;
+  width: 64px;
+  left: 0;
+  bottom: 0;
+  background-color: white;
+  box-shadow: 0 3px 64px rgba(30, 52, 112, 0.16);
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background-color: #383837;
+}
+
+input:focus + .slider {
+  box-shadow: none;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(64px);
+  -ms-transform: translateX(64px);
+  transform: translateX(64px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 64px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
